@@ -1,0 +1,253 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    flex-direction: row;
+}
+
+.sidebar-container {
+    width: 240px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 240px);
+
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow-y: auto;
+    margin-left: 240px;
+}
+
+
+.repositories-list {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.repository-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    font-size: large;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.repository-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.repository-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.repo-name {
+    font-size: 16px;
+    font-weight: 700;
+     display: flex;
+        align-items: center;
+        gap: 8px;
+}
+
+.repository-visibility {
+    font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 12px;
+        background-color: #e8f5e9;
+        color: #175CD3;
+}
+
+.repo-visibility {
+    border: 2px #B2DDFF;
+    background-color: #e0f7fa;
+    color: #175CD3;
+}
+
+.repo-details {
+    font-size: 14px;
+    font-weight: 400;
+    color: #181D27;
+    display: flex;
+    gap: 12px;
+}
+
+.repo-details span {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.language-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+
+@media (max-width: 1024px) {
+
+    
+    .app {
+        flex-direction: column;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .repositories-list {
+        padding: 15px;
+    }
+
+    .repository-item {
+        padding: 12px;
+    }
+
+    .repository-header {
+        font-size: 14px;
+    }
+
+    .repository-visibility {
+        font-size: 12px;
+        padding: 3px 5px;
+    }
+
+    .repository-details {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .sidebar-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sidebar-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .repositories-list {
+        padding: 15px;
+    }
+
+    .repository-item {
+        padding: 12px;
+    }
+
+    .repository-header {
+        font-size: 14px;
+    }
+
+    .repository-visibility {
+        font-size: 12px;
+        padding: 3px 5px;
+    }
+
+    .repository-details {
+        gap: 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Mobile screens */
+    .sidebar-container {
+        padding: 10px;
+        height: auto;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .repository-item {
+        padding: 10px;
+    }
+
+    .repository-header {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 13px;
+    }
+
+    .repository-details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .repository-visibility {
+        font-size: 11px;
+        padding: 2px 4px;
+    }
+}
+
